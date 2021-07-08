@@ -144,8 +144,8 @@ public class EnergyMeterReader implements Runnable
 						LOG.debug("total => totalConsumed={} kWh", totalConsumed);
 						LOG.debug("total => totalReturned={} kWh", totalReturned);
 					}
-					double diffConsumed = (totalConsumed - oldTotalConsumed) * 1000;
-					double diffReturned = (totalReturned - oldTotalReturned) * 1000;
+					Double diffConsumed = (totalConsumed - oldTotalConsumed) * 1000;
+					Double diffReturned = (totalReturned - oldTotalReturned) * 1000;
 					LOG.info("total => totalConsumed-diff={} Wh, total={} kWh", diffConsumed, totalConsumed);
 					LOG.info("total => totalReturned-diff={} Wh, total={} kWh", diffReturned, totalReturned);
 
@@ -153,10 +153,10 @@ public class EnergyMeterReader implements Runnable
 					dim.add(new Dimension("area", "home"));
 					dim.add(new Dimension("equipment", "shelly-3em"));
 					if(diffConsumed > 0.0) {
-					  dbAdpater.sendMeasurement("energy", "energy_consumed", totalReturned.longValue(), dim);
+					  dbAdpater.sendMeasurement("energy", "energy_consumed", diffConsumed.longValue(), dim);
 					}
 					if(diffReturned > 0.0) {
-					  dbAdpater.sendMeasurement("energy", "energy_returned", totalConsumed.longValue(), dim);
+					  dbAdpater.sendMeasurement("energy", "energy_returned", diffReturned.longValue(), dim);
 					}
 				}
 
