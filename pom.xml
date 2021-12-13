@@ -4,11 +4,11 @@
   <groupId>com.mycompany</groupId>
   <artifactId>EnergyMeterReader</artifactId>
   <name>Energy Meter Reader</name>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <scm>
     <developerConnection>scm:git:https://github.com/lukeSky3434/shelly-em-reader.git</developerConnection>
-    <tag>EnergyMeterReader-1.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
   <distributionManagement>
     <repository>
